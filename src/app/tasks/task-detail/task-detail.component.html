@@ -1,0 +1,18 @@
+<mat-card class="detail-card">
+  <mat-card-header>
+    <mat-card-title>{{ task?.title }}</mat-card-title>
+    <mat-card-subtitle>Status: {{ task?.status }}</mat-card-subtitle>
+  </mat-card-header>
+
+  <mat-card-content>
+    <p *ngIf="task?.description; else noDesc">{{ task?.description }}</p>
+    <ng-template #noDesc><p><i>Description is missing</i></p></ng-template>
+  </mat-card-content>
+
+  <mat-card-actions align="start">
+    <button mat-stroked-button color="primary" (click)="goBack()">
+      <mat-icon>arrow_back</mat-icon>
+      Back
+    </button>
+  </mat-card-actions>
+</mat-card>

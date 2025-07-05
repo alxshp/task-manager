@@ -1,0 +1,30 @@
+.task-list-header {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  flex-wrap: wrap;
+  margin-bottom: 16px;
+}
+
+.search-field {
+  flex: 1 1 200px;
+}
+
+.sort-field {
+  width: 180px;
+}
+
+.add-button {
+  height: 56px;
+  width: 56px;
+}
+
+.tasks-container {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.task-card {
+  width: 100%;
+}

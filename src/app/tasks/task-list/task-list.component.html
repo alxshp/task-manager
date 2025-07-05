@@ -1,0 +1,53 @@
+<div class="task-list-header">
+  <mat-form-field appearance="outline" class="search-field">
+    <mat-label>Search</mat-label>
+    <input matInput [(ngModel)]="filter" placeholder="По заголовку..." />
+    <button matSuffix mat-icon-button *ngIf="filter" (click)="filter = ''">
+      <mat-icon>close</mat-icon>
+    </button>
+  </mat-form-field>
+
+  <mat-form-field appearance="outline" class="sort-field">
+    <mat-label>Sort by</mat-label>
+    <mat-select [(ngModel)]="sortBy">
+      <mat-option value="title">Headline</mat-option>
+      <mat-option value="status">Status</mat-option>
+    </mat-select>
+  </mat-form-field>
+
+  <button mat-icon-button (click)="toggleSortDir()" aria-label="Toggle sort direction">
+    <mat-icon>{{ sortAsc ? 'arrow_upward' : 'arrow_downward' }}</mat-icon>
+  </button>
+
+  <button mat-fab color="accent" class="add-button" (click)="showForm = true">
+    <mat-icon>add</mat-icon>
+  </button>
+</div>
+
+<app-task-form *ngIf="showForm" (close)="showForm = false"></app-task-form>
+
+<div class="tasks-container">
+  <mat-card class="task-card" *ngFor="let task of sortedTasks">
+    <mat-card-header>
+      <mat-card-title>{{ task.title }}</mat-card-title>
+      <mat-card-subtitle>Status: {{ task.status }}</mat-card-subtitle>
+    </mat-card-header>
+
+    <mat-card-content>
+      <p>{{ task.description }}</p>
+    </mat-card-content>
+
+    <mat-card-actions align="end">
+      <mat-checkbox
+        [checked]="task.status === 'completed'"
+        (change)="taskService.updateTaskStatus(task.id, $event.checked ? 'completed' : 'pending')">
+      </mat-checkbox>
+      <button mat-icon-button color="warn" (click)="delete(task.id)">
+        <mat-icon>delete</mat-icon>
+      </button>
+      <button mat-icon-button color="primary" (click)="viewDetails(task.id)">
+        <mat-icon>info</mat-icon>
+      </button>
+    </mat-card-actions>
+  </mat-card>
+</div>

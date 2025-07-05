@@ -1,0 +1,35 @@
+form {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+.buttons {
+  display: flex;
+  gap: 8px;
+}
+.form-card {
+  margin-bottom: 16px;
+  padding: 16px;
+
+  mat-card-title {
+    margin-bottom: 16px;
+  }
+
+  mat-form-field {
+    margin-bottom: 16px;
+  }
+
+  mat-card-actions {
+    display: flex;
+    justify-content: flex-end;
+    gap: 12px;
+    padding-top: 8px;
+  }
+}
+
+
+.full-width {
+  width: 100%;
+}
+
+

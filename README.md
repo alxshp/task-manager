@@ -1,27 +1,48 @@
-# TaskManager
+# Task Manager
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 18.2.20.
+Angular приложение для управления задачами.
 
-## Development server
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
+## 📋 Описание
 
-## Code scaffolding
+Task Manager позволяет пользователю:
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+- Просматривать список задач  
+- Добавлять новую задачу с валидацией  
+- Удалять задачу  
+- Просматривать детали задачи на отдельной странице  
+- Фильтровать и сортировать задачи  
+- Сохранять данные между перезагрузками страницы (использует `localStorage`)  
 
-## Build
+Приложение полностью построено на Angular 18 без NgModule (Standalone API) с использованием Angular Material для UI.
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
+---
 
-## Running unit tests
+## ⚙️ Технологии
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+- **Angular 18** (Standalone Components)  
+- **TypeScript**  
+- **Angular Material** (Toolbar, Card, List, Form Field, Input, Select, Checkbox, Button, Icon)  
+- **Reactive Forms**  
+- **RouterModule**   
+- **localStorage** 
+- **SCSS**  
 
-## Running end-to-end tests
+---
 
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
+## 🚀 Быстрый старт
 
-## Further help
+### 1. Установка зависимостей
 
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.dev/tools/cli) page.
+```bash
+npm install
+```
+
+### 2. Запуск проекта
+
+```bash
+ng serve
+```
+
+Откройте [http://localhost:4200](http://localhost:4200) в браузере.
+
